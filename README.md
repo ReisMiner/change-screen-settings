@@ -1,5 +1,7 @@
 # Change Screen settings
 
+![img of the program](https://cdn.upload.systems/uploads/PRP0tJ71.png)
+
 ## Requirements
 
 Download .NET 6.0 Runtime [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime). **Select the "Run
@@ -8,6 +10,7 @@ Desktop Apps" verison!**
 ## Download
 
 Download the .exe [here](https://github.com/ReisMiner/change-screen-settings/releases).
+
 
 ## Troubleshooting
 
