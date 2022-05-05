@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupAfterSpoof", "SetupAfterSpoof\SetupAfterSpoof.csproj", "{24080E06-50C2-40B0-BC49-11434C7C7E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{2C1FDDD9-67B9-4404-8498-851174FC3CE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24080E06-50C2-40B0-BC49-11434C7C7E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24080E06-50C2-40B0-BC49-11434C7C7E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24080E06-50C2-40B0-BC49-11434C7C7E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24080E06-50C2-40B0-BC49-11434C7C7E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C1FDDD9-67B9-4404-8498-851174FC3CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C1FDDD9-67B9-4404-8498-851174FC3CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C1FDDD9-67B9-4404-8498-851174FC3CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C1FDDD9-67B9-4404-8498-851174FC3CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,139 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="ScreenSetup" Height="200" Width="370" ResizeMode="NoResize">
+
+    <Grid x:Name="MainGrid">
+        <TabControl x:Name="Tabs">
+            <TabItem Header="Screen 1" x:Name="TabScreen1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" /> <!--labels -->
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="Auto" /> <!--inputs -->
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="30" /> <!-- btn -->
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" /> <!-- cbxs -->
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="Auto" /> <!-- size -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- offset -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- hz -->
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="1" Content="Screen Resolution" />
+                    <Label Grid.Row="1" Grid.Column="3" Content="Screen Offset" />
+                    <Label Grid.Row="1" Grid.Column="5" Content="Screen Hz" />
+
+                    <TextBox Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" x:Name="Resolution1"></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" x:Name="Offset1"></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" x:Name="Hz1"></TextBox>
+
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Screens</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Screen 2" x:Name="TabScreen2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" /> <!--labels -->
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="Auto" /> <!--inputs -->
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="30" /> <!-- btn -->
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="Auto" /> <!-- size -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- offset -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- hz -->
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="1" Content="Screen Resolution" />
+                    <Label Grid.Row="1" Grid.Column="3" Content="Screen Offset" />
+                    <Label Grid.Row="1" Grid.Column="5" Content="Screen Hz" />
+
+                    <TextBox Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" x:Name="Resolution2"></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" x:Name="Offset2"></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" x:Name="Hz2"></TextBox>
+
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Screens</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Screen 3" x:Name="TabScreen3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" /> <!--labels -->
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="Auto" /> <!--inputs -->
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="30" /> <!-- btn -->
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="Auto" /> <!-- size -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- offset -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- hz -->
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="1" Content="Screen Resolution" />
+                    <Label Grid.Row="1" Grid.Column="3" Content="Screen Offset" />
+                    <Label Grid.Row="1" Grid.Column="5" Content="Screen Hz" />
+
+                    <TextBox Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" x:Name="Resolution3"></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" x:Name="Offset3"></TextBox>
+                    <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" x:Name="Hz3"></TextBox>
+
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Screens</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" /> <!--labels -->
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="Auto" /> <!--inputs -->
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20" /> <!-- btn -->
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="310" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="True" Click="ToggleButton_OnChecked" x:Name="SaveCbx">Save Settings</CheckBox>
+                    <CheckBox Grid.Row="1" Grid.Column="1" IsEnabled="True" x:Name="Guiless">GUI-less mode (active after restart)</CheckBox>
+                    <Button Grid.Row="7" Grid.Column="1" Click="CrashHelper_Click">Why crashes? View possible combinations</Button>
+
+                    <Button Grid.Row="5" Grid.Column="1" Click="SaveSettingsClick">Save Settings</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Made by ReisMiner#1111" IsEnabled="False"></TabItem>
+        </TabControl>
+    </Grid>
+</Window>
