@@ -1,4 +1,8 @@
 # Change Screen settings
+Change these things for the screens<br>
+![img of the program](https://cdn.upload.systems/uploads/PRP0tJ71.png)<br>
+Settings for the program<br>
+![img of the program](https://cdn.upload.systems/uploads/Qu5rqIip.png)<br>
 
 ## Requirements
 
@@ -20,8 +24,11 @@ A: You entered an unsupported config. Go to the settings tab and then click on t
 Q: What is GUI-less mode?[<br>]()
 A: This mode applies the Screen-Settings without the need to click on the Apply button in the GUI. Saves you two clicks :)<br>
 <br>
-Q: How do I disable GUI-less mode?[<br>]()
-A: Rename or delete the screen.cfg file in the directory where the .exe is located.
+Q: How do I disable GUI-less mode?<br>
+A: Rename or delete the screen.cfg file in the directory where the .exe is located.<br>
+<br>
+Q: Uh I messed something up. How do I reset it?<br>
+A: Go to the desktop, right-click and select Display Settings. Change the settings there!<br>
 
 ---
 made by reisminer#1111
