@@ -89,6 +89,8 @@ namespace GUI
                     display.SetSettings(s, true);
                 }
             }
+            
+            
         }
 
         private void ToggleButton_OnChecked(object sender, RoutedEventArgs e)

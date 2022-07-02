@@ -4,7 +4,7 @@ using WindowsDisplayAPI;
 
 namespace GUI;
 
-public partial class Popup : Window
+public partial class Popup
 {
     public Popup()
     {

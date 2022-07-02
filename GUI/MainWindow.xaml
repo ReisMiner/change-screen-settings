@@ -40,7 +40,7 @@
                     <TextBox Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" x:Name="Offset1"></TextBox>
                     <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" x:Name="Hz1"></TextBox>
 
-                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Screens</Button>
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Screen 2" x:Name="TabScreen2">
@@ -72,7 +72,7 @@
                     <TextBox Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" x:Name="Offset2"></TextBox>
                     <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" x:Name="Hz2"></TextBox>
 
-                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Screens</Button>
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Screen 3" x:Name="TabScreen3">
@@ -104,7 +104,37 @@
                     <TextBox Grid.Row="3" Grid.Column="3" VerticalContentAlignment="Center" x:Name="Offset3"></TextBox>
                     <TextBox Grid.Row="3" Grid.Column="5" VerticalContentAlignment="Center" x:Name="Hz3"></TextBox>
 
-                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Screens</Button>
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Volume">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" /> <!--labels -->
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="Auto" /> <!--inputs -->
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="30" /> <!-- btn -->
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" /> <!-- cbxs -->
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="Auto" /> <!-- size -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- offset -->
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" /> <!-- hz -->
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="1" Grid.Column="1">Microphone Level</Label>
+                    <DockPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
+                        <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="30" />
+                        <Slider Maximum="100" Minimum="0" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="slValue" />
+                    </DockPanel>
+                    <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Settings">

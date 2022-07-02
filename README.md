@@ -17,6 +17,9 @@ A:You probably didnt choose the desktop version!<br>
 Q: The program crashes when i want to apply the configuration.<br>
 A: You entered an unsupported config. Go to the settings tab and then click on the "why crash" button to see all valid configurations for each screen!<br>
 <br>
+Q: What is GUI-less mode?[<br>]()
+A: This mode applies the Screen-Settings without the need to click on the Apply button in the GUI. Saves you two clicks :)<br>
+<br>
 Q: How do I disable GUI-less mode?[<br>]()
 A: Rename or delete the screen.cfg file in the directory where the .exe is located.
 
