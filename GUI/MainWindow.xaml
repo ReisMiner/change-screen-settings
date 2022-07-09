@@ -107,7 +107,7 @@
                     <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Volume">
+            <TabItem Header="Volume" IsEnabled="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20" />

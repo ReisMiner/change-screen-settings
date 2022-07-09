@@ -41,10 +41,10 @@ namespace GUI
                     Offset3.Text = display.CurrentSetting.Position.X + "x" + display.CurrentSetting.Position.Y;
                     Hz3.Text = display.CurrentSetting.Frequency.ToString();
                 }
-
-                LoadSettings();
             }
 
+            LoadSettings();
+            
             if (screenNumber == 1)
             {
                 TabScreen2.IsEnabled = false;
@@ -138,6 +138,7 @@ namespace GUI
                 Hz3.Text = lines[10];
                 if (Convert.ToBoolean(lines[1]))
                 {
+                    Guiless.IsChecked = true;
                     ButtonBase_OnClick(null, null);
                     Environment.Exit(0);
                 }
