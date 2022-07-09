@@ -29,6 +29,8 @@ A: Rename or delete the screen.cfg file in the directory where the .exe is locat
 <br>
 Q: Uh I messed something up. How do I reset it?<br>
 A: Go to the desktop, right-click and select Display Settings. Change the settings there!<br>
-
+<br>
+Q: What is that Volume thingy which i can't click?
+A: Some coming up feature :)<br>
 ---
 made by reisminer#1111
