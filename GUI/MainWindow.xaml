@@ -107,7 +107,7 @@
                     <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Volume" IsEnabled="False">
+            <TabItem Header="Volume">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20" />
@@ -129,7 +129,7 @@
                         <ColumnDefinition Width="Auto" /> <!-- hz -->
                         <ColumnDefinition Width="20" />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="1" Grid.Column="1">Microphone Level</Label>
+                    <Label x:Name="labelMic" Grid.Row="1" Grid.Column="1">Microphone Level</Label>
                     <DockPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
                         <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="30" />
                         <Slider Maximum="100" Minimum="0" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="slValue" />

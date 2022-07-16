@@ -4,6 +4,8 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using AudioSwitcher.AudioApi;
+using AudioSwitcher.AudioApi.CoreAudio;
 using WindowsDisplayAPI;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
@@ -44,7 +46,7 @@ namespace GUI
             }
 
             LoadSettings();
-            
+
             if (screenNumber == 1)
             {
                 TabScreen2.IsEnabled = false;
@@ -56,9 +58,21 @@ namespace GUI
                 TabScreen3.IsEnabled = false;
             }
 
-            MessageBox.Show(
-                "The filled in values are the current settings.\nSplit width and height with a small x!\nWidth comes before the x and after the x comes the height!\nIf the program crashes, you did something wrong!\nTo disable GUI-less mode, delete the screen.cfg file in this directory!",
-                "How to use?", MessageBoxButton.OK, MessageBoxImage.Information);
+            // MessageBox.Show(
+            // "The filled in values are the current settings.\nSplit width and height with a small x!\nWidth comes before the x and after the x comes the height!\nIf the program crashes, you did something wrong!\nTo disable GUI-less mode, delete the screen.cfg file in this directory!",
+            // "How to use?", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            CoreAudioController audioController = new CoreAudioController();
+            var devices = audioController.GetCaptureDevices(DeviceState.Active);
+
+            foreach (CoreAudioDevice device in devices)
+            {
+                if (device.IsDefaultDevice)
+                {
+                    labelMic.Content = device.Name;
+                    device.SetVolumeAsync(82);
+                }
+            }
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -89,8 +103,6 @@ namespace GUI
                     display.SetSettings(s, true);
                 }
             }
-            
-            
         }
 
         private void ToggleButton_OnChecked(object sender, RoutedEventArgs e)
