@@ -58,21 +58,9 @@ namespace GUI
                 TabScreen3.IsEnabled = false;
             }
 
-            // MessageBox.Show(
-            // "The filled in values are the current settings.\nSplit width and height with a small x!\nWidth comes before the x and after the x comes the height!\nIf the program crashes, you did something wrong!\nTo disable GUI-less mode, delete the screen.cfg file in this directory!",
-            // "How to use?", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            CoreAudioController audioController = new CoreAudioController();
-            var devices = audioController.GetCaptureDevices(DeviceState.Active);
-
-            foreach (CoreAudioDevice device in devices)
-            {
-                if (device.IsDefaultDevice)
-                {
-                    labelMic.Content = device.Name;
-                    device.SetVolumeAsync(82);
-                }
-            }
+            MessageBox.Show(
+                "The filled in values are the current settings.\nSplit width and height with a small x!\nWidth comes before the x and after the x comes the height!\nIf the program crashes, you did something wrong!\nTo disable GUI-less mode, delete the screen.cfg file in this directory!",
+                "How to use?", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -101,6 +89,18 @@ namespace GUI
                     string[] o = Offset1.Text.Split("x");
                     var s = new DisplaySetting(new Size(Convert.ToInt32(r[0]), Convert.ToInt32(r[1])), new Point(Convert.ToInt32(o[0]), Convert.ToInt32(o[1])), Convert.ToInt32(Hz1.Text));
                     display.SetSettings(s, true);
+                }
+            }
+            
+            CoreAudioController audioController = new CoreAudioController();
+            var devices = audioController.GetCaptureDevices(DeviceState.Active);
+
+            foreach (CoreAudioDevice device in devices)
+            {
+                if (device.IsDefaultDevice)
+                {
+                    labelMic.Content = device.Name;
+                    device.SetVolumeAsync(MicVolume.Value);
                 }
             }
         }

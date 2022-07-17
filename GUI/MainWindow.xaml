@@ -131,8 +131,8 @@
                     </Grid.ColumnDefinitions>
                     <Label x:Name="labelMic" Grid.Row="1" Grid.Column="1">Microphone Level</Label>
                     <DockPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
-                        <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="30" />
-                        <Slider Maximum="100" Minimum="0" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" Name="slValue" />
+                        <TextBox Text="{Binding ElementName=MicVolume, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="30" />
+                        <Slider Maximum="100" Minimum="0" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" x:Name="MicVolume" Value="84"/>
                     </DockPanel>
                     <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
