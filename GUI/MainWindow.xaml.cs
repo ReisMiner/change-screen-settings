@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -15,10 +16,31 @@ namespace GUI
     public partial class MainWindow
     {
         private string fileLoc = "screen.cfg";
+        private List<CoreAudioDevice> _microphones;
+        private CoreAudioDevice _selectedMic;
+
+        public CoreAudioDevice SelectedMic
+        {
+            get => _selectedMic;
+            set => _selectedMic = value;
+        }
+
+        public List<CoreAudioDevice> Microphones
+        {
+            get => _microphones;
+            set => _microphones = value;
+        }
+
+        private CoreAudioController audioController;
 
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
+
+            audioController = new();
+            _microphones = new List<CoreAudioDevice>();
+
             int screenNumber = 0;
             foreach (var display in Display.GetDisplays())
             {
@@ -61,6 +83,11 @@ namespace GUI
             MessageBox.Show(
                 "The filled in values are the current settings.\nSplit width and height with a small x!\nWidth comes before the x and after the x comes the height!\nIf the program crashes, you did something wrong!\nTo disable GUI-less mode, delete the screen.cfg file in this directory!",
                 "How to use?", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            foreach (var coreAudioDevice in audioController.GetCaptureDevices(DeviceState.Active))
+            {
+                _microphones.Add(coreAudioDevice);
+            }
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -91,17 +118,10 @@ namespace GUI
                     display.SetSettings(s, true);
                 }
             }
-            
-            CoreAudioController audioController = new CoreAudioController();
-            var devices = audioController.GetCaptureDevices(DeviceState.Active);
 
-            foreach (CoreAudioDevice device in devices)
+            if (_selectedMic != null)
             {
-                if (device.IsDefaultDevice)
-                {
-                    labelMic.Content = device.Name;
-                    device.SetVolumeAsync(MicVolume.Value);
-                }
+                _selectedMic.SetVolumeAsync(MicVolume.Value);
             }
         }
 

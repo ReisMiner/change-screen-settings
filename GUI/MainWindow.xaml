@@ -107,13 +107,13 @@
                     <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Volume">
+            <TabItem Header="Mic Volume">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="Auto" /> <!--labels -->
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="30" /> <!--labels -->
                         <RowDefinition Height="0" />
-                        <RowDefinition Height="Auto" /> <!--inputs -->
+                        <RowDefinition Height="30" /> <!--inputs -->
                         <RowDefinition Height="10" />
                         <RowDefinition Height="30" /> <!-- btn -->
                         <RowDefinition Height="30" />
@@ -130,10 +130,18 @@
                         <ColumnDefinition Width="20" />
                     </Grid.ColumnDefinitions>
                     <Label x:Name="labelMic" Grid.Row="1" Grid.Column="1">Microphone Level</Label>
-                    <DockPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
+                    <DockPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
                         <TextBox Text="{Binding ElementName=MicVolume, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="30" />
                         <Slider Maximum="100" Minimum="0" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" x:Name="MicVolume" Value="84"/>
                     </DockPanel>
+                    <Label Grid.Row="1" Grid.Column="5">Device</Label>
+                    <ComboBox Grid.Row="3" Grid.Column="5" ItemsSource="{Binding Microphones}" MaxWidth="150" MaxHeight="30" SelectedItem="{Binding SelectedMic, Mode=TwoWay}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding FullName}"></Label>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                     <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Click="ButtonBase_OnClick">Apply all Settings</Button>
                 </Grid>
             </TabItem>
