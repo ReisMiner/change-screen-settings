@@ -146,7 +146,8 @@ namespace GUI
                 SaveCbx.IsChecked.Value.ToString(), Guiless.IsChecked.Value.ToString(),
                 Resolution1.Text, Offset1.Text, Hz1.Text,
                 Resolution2.Text, Offset2.Text, Hz2.Text,
-                Resolution3.Text, Offset3.Text, Hz3.Text
+                Resolution3.Text, Offset3.Text, Hz3.Text,
+                MicVolume.Value.ToString()
             };
 
             File.WriteAllLines(fileLoc, lines);
@@ -154,26 +155,34 @@ namespace GUI
 
         void LoadSettings()
         {
-            if (File.Exists(fileLoc))
+            try
             {
-                var lines = File.ReadAllLines(fileLoc);
-                if (!Convert.ToBoolean(lines[0]))
-                    return;
-                Resolution1.Text = lines[2];
-                Offset1.Text = lines[3];
-                Hz1.Text = lines[4];
-                Resolution2.Text = lines[5];
-                Offset2.Text = lines[6];
-                Hz2.Text = lines[7];
-                Resolution3.Text = lines[8];
-                Offset3.Text = lines[9];
-                Hz3.Text = lines[10];
-                if (Convert.ToBoolean(lines[1]))
+                if (File.Exists(fileLoc))
                 {
-                    Guiless.IsChecked = true;
-                    ButtonBase_OnClick(null, null);
-                    Environment.Exit(0);
+                    var lines = File.ReadAllLines(fileLoc);
+                    if (!Convert.ToBoolean(lines[0]))
+                        return;
+                    Resolution1.Text = lines[2];
+                    Offset1.Text = lines[3];
+                    Hz1.Text = lines[4];
+                    Resolution2.Text = lines[5];
+                    Offset2.Text = lines[6];
+                    Hz2.Text = lines[7];
+                    Resolution3.Text = lines[8];
+                    Offset3.Text = lines[9];
+                    Hz3.Text = lines[10];
+                    MicVolume.Value = Convert.ToDouble(lines[11]);
+                    if (Convert.ToBoolean(lines[1]))
+                    {
+                        Guiless.IsChecked = true;
+                        ButtonBase_OnClick(null, null);
+                        Environment.Exit(0);
+                    }
                 }
+            }
+            catch (Exception ignored)
+            {
+                File.Delete(fileLoc);
             }
         }
 
