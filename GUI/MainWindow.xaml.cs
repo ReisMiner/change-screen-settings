@@ -141,16 +141,23 @@ namespace GUI
 
         private void SaveSettingsClick(object sender, RoutedEventArgs e)
         {
-            string[] lines =
+            if (SelectedMic != null)
             {
-                SaveCbx.IsChecked.Value.ToString(), Guiless.IsChecked.Value.ToString(),
-                Resolution1.Text, Offset1.Text, Hz1.Text,
-                Resolution2.Text, Offset2.Text, Hz2.Text,
-                Resolution3.Text, Offset3.Text, Hz3.Text,
-                MicVolume.Value.ToString()
-            };
+                string[] lines =
+                {
+                    SaveCbx.IsChecked.Value.ToString(), Guiless.IsChecked.Value.ToString(),
+                    Resolution1.Text, Offset1.Text, Hz1.Text,
+                    Resolution2.Text, Offset2.Text, Hz2.Text,
+                    Resolution3.Text, Offset3.Text, Hz3.Text,
+                    MicVolume.Value.ToString(), SelectedMic.Id.ToString()
+                };
 
-            File.WriteAllLines(fileLoc, lines);
+                File.WriteAllLines(fileLoc, lines);
+            }
+            else
+            {
+                MessageBox.Show("Error", "No mic selected. cant save.");
+            }
         }
 
         void LoadSettings()
@@ -171,7 +178,15 @@ namespace GUI
                     Resolution3.Text = lines[8];
                     Offset3.Text = lines[9];
                     Hz3.Text = lines[10];
+
                     MicVolume.Value = Convert.ToDouble(lines[11]);
+                    Guid micId = new Guid(lines[12]);
+                    foreach (var coreAudioDevice in audioController.GetCaptureDevices(DeviceState.Active))
+                    {
+                        if (coreAudioDevice.Id == micId)
+                            SelectedMic = coreAudioDevice;
+                    }
+
                     if (Convert.ToBoolean(lines[1]))
                     {
                         Guiless.IsChecked = true;
