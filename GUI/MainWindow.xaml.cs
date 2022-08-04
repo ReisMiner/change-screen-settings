@@ -215,7 +215,6 @@ namespace GUI
         {
             Popup p = new Popup();
             p.ShowDialog();
-            return;
         }
     }
 }
