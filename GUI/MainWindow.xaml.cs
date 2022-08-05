@@ -197,6 +197,7 @@ namespace GUI
             }
             catch (Exception ignored)
             {
+                //File read error so delete it lol
                 File.Delete(fileLoc);
             }
         }
