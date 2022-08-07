@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using AudioSwitcher.AudioApi;
 using AudioSwitcher.AudioApi.CoreAudio;
 using WindowsDisplayAPI;
@@ -200,16 +198,6 @@ namespace GUI
                 //File read error so delete it lol
                 File.Delete(fileLoc);
             }
-        }
-
-        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = "https://www.youtube.com/channel/UCg3F3ebXqoW27WVZdKSGdCw",
-                UseShellExecute = true
-            });
-            Tabs.SelectedIndex = 0;
         }
 
         private void CrashHelper_Click(object sender, RoutedEventArgs e)
