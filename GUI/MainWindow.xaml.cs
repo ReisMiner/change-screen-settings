@@ -154,7 +154,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Error", "No mic selected. cant save.");
+                MessageBox.Show("No mic selected. cant save.", "Error");
             }
         }
 
