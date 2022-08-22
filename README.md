@@ -1,7 +1,7 @@
 # Change Screen settings
 Change these things for the screens<br>
 ![img of the program](https://cdn.upload.systems/uploads/PRP0tJ71.png)<br>
-Microphone Settings
+Microphone Settings<br>
 ![img of the program](https://cdn.upload.systems/uploads/hsiKcniP.png)<br>
 Settings for the program<br>
 ![img of the program](https://cdn.upload.systems/uploads/Qu5rqIip.png)<br>
