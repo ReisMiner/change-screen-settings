@@ -65,6 +65,15 @@ namespace GUI
                 }
             }
 
+            foreach (var coreAudioDevice in audioController.GetCaptureDevices(DeviceState.Active))
+            {
+                _microphones.Add(coreAudioDevice);
+                if (coreAudioDevice.IsDefaultDevice)
+                {
+                    SelectedMic = coreAudioDevice;
+                }
+            }
+
             LoadSettings();
 
             if (screenNumber == 1)
@@ -81,11 +90,6 @@ namespace GUI
             MessageBox.Show(
                 "The filled in values are the current settings.\nSplit width and height with a small x!\nWidth comes before the x and after the x comes the height!\nIf the program crashes, you did something wrong!\nTo disable GUI-less mode, delete the screen.cfg file in this directory!",
                 "How to use?", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            foreach (var coreAudioDevice in audioController.GetCaptureDevices(DeviceState.Active))
-            {
-                _microphones.Add(coreAudioDevice);
-            }
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
